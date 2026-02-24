@@ -69,15 +69,14 @@ const SUBJECT_COLORS = [
 ];
 
 export const SUBJECTS = [
-  "Matemática", "Linguagens", "Ciências Humanas", "Ciências da Natureza",
+  "Matemática", "Linguagens", "Simulado", "Exercícios",
   "Redação", "Física", "Química", "Biologia", "História", "Geografia",
-  "Literatura", "Português", "Inglês", "Filosofia", "Sociologia",
+  "Literatura", "Português", "Filosofia", "Sociologia", "Anki",
 ];
 
 export const DAY_NAMES = ["Dom", "Seg", "Ter", "Qua", "Qui", "Sex", "Sáb"];
 export const DAY_NAMES_FULL = [
-  "Domingo", "Segunda", "Terça", "Quarta",
-  "Quinta", "Sexta", "Sábado",
+  "Domingo", "Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado",
 ];
 
 export const ACHIEVEMENTS_LIST: Achievement[] = [

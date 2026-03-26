@@ -10,29 +10,45 @@ import Calendario from "./pages/Calendario";
 import Stats from "./pages/Stats";
 import Conquistas from "./pages/Conquistas";
 import NotFound from "./pages/NotFound";
+import { useEffect } from 'react'
+import { supabase } from './lib/supabase'
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <div className="max-w-lg mx-auto min-h-screen relative">
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/rotina" element={<Rotina />} />
-            <Route path="/calendario" element={<Calendario />} />
-            <Route path="/stats" element={<Stats />} />
-            <Route path="/conquistas" element={<Conquistas />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <BottomNav />
-        </div>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
 
-export default App;
+  useEffect(() => {
+    async function teste() {
+      const { data, error } = await supabase.from('plans').select('*')
+      console.log('dados:', data)
+      console.log('erro:', error)
+    }
+
+    teste()
+  }, [])
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <div className="max-w-lg mx-auto min-h-screen relative">
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/rotina" element={<Rotina />} />
+              <Route path="/calendario" element={<Calendario />} />
+              <Route path="/stats" element={<Stats />} />
+              <Route path="/conquistas" element={<Conquistas />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <BottomNav />
+          </div>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  )
+}
+
+export default App
+

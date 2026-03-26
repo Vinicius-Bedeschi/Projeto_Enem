@@ -1,0 +1,59 @@
+/* CONTAINER */
+.react-calendar {
+  width: 100%;
+  background: #09090b;
+  border: none;
+  border-radius: 16px;
+  padding: 12px;
+  color: white;
+  font-family: inherit;
+}
+
+/* HEADER (mês) */
+.react-calendar__navigation button {
+  color: white;
+  font-weight: bold;
+  background: none;
+  border-radius: 8px;
+}
+
+.react-calendar__navigation button:hover {
+  background: #18181b;
+}
+
+/* DIAS DA SEMANA */
+.react-calendar__month-view__weekdays {
+  text-transform: uppercase;
+  font-size: 10px;
+  color: #71717a;
+}
+
+/* DIAS */
+.react-calendar__tile {
+  background: transparent;
+  border-radius: 10px;
+  padding: 10px 0;
+  color: white;
+}
+
+/* HOVER */
+.react-calendar__tile:hover {
+  background: #18181b;
+}
+
+/* DIA SELECIONADO */
+.react-calendar__tile--active {
+  background: #2563eb;
+  color: white;
+}
+
+/* HOJE */
+.react-calendar__tile--now {
+  background: #27272a;
+  color: white;
+}
+
+/* FIM DE SEMANA */
+.react-calendar__month-view__days__day--weekend {
+  color: #a1a1aa;
+}
